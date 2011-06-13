@@ -36,12 +36,12 @@ public static Component currentinstance;
     ui.getIcons();
     try {
       String lf = Preferences.getValue("LOOKANDFEEL","METAL");
-      if (lf.equals("WINDOWS"))
-        UIManager.setLookAndFeel(new WindowsLookAndFeel());
+      /*if (lf.equals("WINDOWS"))
+        UIManager.setLookAndFeel(new WindowsLookAndFeel());tms*/
       if (lf.equals("METAL"))
         UIManager.setLookAndFeel(new MetalLookAndFeel());
-      if (lf.equals("MOTIF"))
-        UIManager.setLookAndFeel(new MotifLookAndFeel());
+     /* if (lf.equals("MOTIF"))
+        UIManager.setLookAndFeel(new MotifLookAndFeel()); tms*/
        SwingUtilities.updateComponentTreeUI(this);
     }
     catch (UnsupportedLookAndFeelException e)

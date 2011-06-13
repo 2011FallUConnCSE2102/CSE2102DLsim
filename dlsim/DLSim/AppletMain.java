@@ -9,7 +9,8 @@ import java.io.*;
 import java.util.zip.*;
 import dlsim.DLSim.Util.staticUtils;
 import java.awt.event.ActionEvent;
-import netscape.javascript.*;
+import netscape.javascript.JSObject;
+
 
 /**
  * <p>Title: DLSim.AppletMain</p>
@@ -95,9 +96,19 @@ private static JSObject jso;
                                          " will be lost when you close the Applet!\n");
 
     }
-    LMSPut("DLSim.core.savedcircuits.names[0]","Empty Circuit");
-    LMSPut("DLSim.core.savedcircuits.mementos[0]",
-           "<CIRCUITMEMENTO><COMPONENTS></COMPONENTS><WIRES></WIRES></CIRCUITMEMENTO>");
+    try {
+		LMSPut("DLSim.core.savedcircuits.names[0]","Empty Circuit");
+	} catch (Exception e2) {
+		// TODO Auto-generated catch block
+		e2.printStackTrace();
+	}
+    try {
+		LMSPut("DLSim.core.savedcircuits.mementos[0]",
+		       "<CIRCUITMEMENTO><COMPONENTS></COMPONENTS><WIRES></WIRES></CIRCUITMEMENTO>");
+	} catch (Exception e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
 
     // find the source directory for circuits
     URL circuitsource=this.getDocumentBase();
